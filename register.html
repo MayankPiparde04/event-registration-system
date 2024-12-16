@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Registration</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f7fc;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      main {
+        width: 90%;
+        max-width: 800px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        text-align: center;
+        color: #4a90e2;
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      fieldset {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        background-color: #f9fbff;
+      }
+
+      legend {
+        font-weight: bold;
+        color: #4a90e2;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        background-color: #fff;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: none;
+        border-color: #4a90e2;
+        box-shadow: 0 0 4px rgba(74, 144, 226, 0.4);
+      }
+
+      .btn {
+        background-color: #4a90e2;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .btn:hover {
+        background-color: #357ab8;
+      }
+
+      #addEvent {
+        background-color: #6bbf59;
+        color: white;
+        margin-top: 10px;
+      }
+
+      #addEvent:hover {
+        background-color: #539645;
+      }
+
+      .eventRegistration {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 15px;
+        margin-bottom: 10px;
+        background-color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h2>Event Registration Form</h2>
+      <form action="php/register.php" method="POST">
+        <fieldset>
+          <legend>User Information</legend>
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="phone">Phone Number:</label>
+          <input type="text" id="phone" name="phone" required />
+
+          <label for="address">Address:</label>
+          <textarea id="address" name="address"></textarea>
+
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" required />
+
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <label for="institute_name">Institute Name:</label>
+          <input
+            type="text"
+            id="institute_name"
+            name="institute_name"
+            required
+          />
+
+          <label for="course">Course:</label>
+          <input type="text" id="course" name="course" required />
+
+          <label for="graduating_year">Graduating Year:</label>
+          <input
+            type="number"
+            id="graduating_year"
+            name="graduating_year"
+            required
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Event Registration</legend>
+          <div id="eventRegistrations">
+            <div class="eventRegistration">
+              <label for="event_0">Event Name:</label>
+              <input
+                type="text"
+                id="event_0"
+                name="events[0][event]"
+                required
+              />
+
+              <label for="event_slot_0">Event Slot:</label>
+              <input
+                type="text"
+                id="event_slot_0"
+                name="events[0][event_slot]"
+              />
+
+              <label for="registration_type_0">Registration Type:</label>
+              <select
+                id="registration_type_0"
+                name="events[0][registration_type]"
+                required
+              >
+                <option value="Individual">Individual</option>
+                <option value="Group">Group</option>
+              </select>
+
+              <label for="special_requirements_0">Special Requirements:</label>
+              <textarea
+                id="special_requirements_0"
+                name="events[0][special_requirements]"
+              ></textarea>
+            </div>
+          </div>
+        </fieldset>
+        <button type="submit" class="btn">Register</button>
+      </form>
+    </main>
+  </body>
+</html>
