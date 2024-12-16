@@ -12,15 +12,14 @@ This is a simple event registration system where users can register for events, 
 
 Before running the system, make sure you have the following installed:
 
+- [XAMPP](https://www.apachefriends.org/index.html) or any LAMP/WAMP stack
 - MySQL database server
 - A code editor (e.g., VSCode, Sublime Text)
 
 ## Setup
 
 ### 1. Clone the repository
-
 Clone this repository to your local machine:
 
 ```bash
-git clone <https://github.com/MayankPiparde04/event-registration-system>
-```
+git clone https://github.com/MayankPiparde04/event-registration-system
